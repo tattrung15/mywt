@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Classic Weather Widget</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<link th:href="@{/public/css/style.css}" rel='stylesheet'/>
+	<link rel="stylesheet" th:href="@{public/css/animate.css}">
+	<script th:src="@{/public/js/jquery.min.js}"></script>
+	<script th:src="@{/public/js/wow.js}"></script>
+	<script th:src="@{/public/js/1.js}"></script>
+	<script th:src="@{/public/js/weather.js}"></script>
+</head>
+<body>
+	<h1 class="wow bounceInDown">My Weather</h1>
+	<!-- Weather Widget starts here -->
+	<div class="w3ls-weather">
+		<div class="weather1 wow fadeInLeft" data-wow-delay="0.5s">
+			<h3>My home</h3>
+			<h4><span id="temp" th:text="${weather.temp}"></span>°c</h4>
+			<div>
+				<h4><img th:src="@{/public/images/water.png}" alt="" class="iconhumid"><span id="humid" th:text="${weather.humid}"></span>%</h4>
+			</div>
+			<h5 id="date" th:text="${weather.date}"></h5>
+			<h5 id="time" th:text="${weather.time}"></h5>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<!-- //Weather Widget ends here -->
+	<!--copyright-->
+	<button type="button" class="btn wow fadeInLeft" data-wow-delay="0.7s" onclick="update();">UPDATE</button>
+	<div class="copy-wthree wow zoomIn" data-wow-delay="1s">
+		<p>© 2019 Classic Weather Widget. All Rights Reserved</p>
+	</div>
+	<!--//copyright-->
+</body>
+</html>
